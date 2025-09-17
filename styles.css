@@ -1,3 +1,66 @@
+/* Responsividade extra para tablets e celulares */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+        padding: 0 var(--spacing-md);
+    }
+    .about-content, .contact-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    .education-list {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: var(--font-size-sm);
+    }
+    .container {
+        padding: 0 var(--spacing-xs);
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .profile-image {
+        width: 90px;
+        height: 90px;
+    }
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    .project-image {
+        height: 120px;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    .education-list {
+        width: 100%;
+    }
+    .btn-primary, .btn-secondary {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+    .social-link {
+        width: 36px;
+        height: 36px;
+    }
+}
 
 /* Reset e configurações globais */
 * {
@@ -8,16 +71,16 @@
 
 :root {
     /* Cores principais baseadas no design */
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --bg-card: #334155;
-    --text-primary: #f8fafc;
-    --text-secondary: #cbd5e1;
-    --text-muted: #94a3b8;
-    --accent-cyan: #06b6d4;
-    --accent-purple: #8b5cf6;
-    --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
-    --border-color: #475569;
+    --bg-primary: #ffe4ec; /* rosa claro */
+    --bg-secondary: #f8bbd0; /* rosa médio */
+    --bg-card: #f06292; /* rosa escuro */
+    --text-primary: #4a0033; /* vinho escuro */
+    --text-secondary: #ad1457; /* rosa escuro */
+    --text-muted: #f8bbd0; /* rosa claro */
+    --accent-cyan: #f06292; /* rosa escuro */
+    --accent-purple: #c2185b; /* rosa profundo */
+    --accent-gradient: linear-gradient(135deg, #f8bbd0 0%, #f06292 100%);
+    --border-color: #f06292; /* rosa escuro */
     
     /* Tipografia */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -73,7 +136,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(248, 187, 208, 0.95); /* rosa médio translúcido */
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
@@ -92,7 +155,7 @@ body {
 .nav-brand .brand-text {
     font-size: var(--font-size-xl);
     font-weight: 700;
-    background: var(--accent-gradient);
+    background: var(--bg-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -152,7 +215,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(240, 98, 146, 0.1) 0%, transparent 70%); /* rosa escuro translúcido */
     position: relative;
 }
 
@@ -179,7 +242,7 @@ body {
     border-radius: 50%;
     overflow: hidden;
     border: 4px solid var(--accent-purple);
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 30px rgba(194, 24, 91, 0.3); /* sombra rosa profundo */
     transition: transform 0.3s ease;
 }
 
@@ -242,28 +305,28 @@ body {
 }
 
 .social-link.linkedin:hover {
-    background: #0077b5;
-    border-color: #0077b5;
+    background: #f06292;
+    border-color: #f06292;
 }
 
 .social-link.github:hover {
-    background: #333;
-    border-color: #333;
+    background: #c2185b;
+    border-color: #c2185b;
 }
 
 .social-link.github:hover {
-    background: linear-gradient(45deg, #a5a5a5 0%, #707070 25%, #585858 50%, #383838 75%, #1f1f1f 100%);
-    border-color: #000000;
+    background: linear-gradient(45deg, #f8bbd0 0%, #f06292 50%, #c2185b 100%);
+    border-color: #c2185b;
 }
 
 .social-link.Instagram:hover {
-    background: #ff0000;
-    border-color: #ff0000;
+    background: #ad1457;
+    border-color: #ad1457;
 }
 
 .social-link.Instagram:hover {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    border-color: #bc1888;
+    background: linear-gradient(45deg, #f8bbd0 0%, #f06292 50%, #ad1457 100%);
+    border-color: #ad1457;
 }
 
 /* Seções gerais */
@@ -849,12 +912,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--accent-cyan);
+    background: var(--accent-purple);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-purple);
+    background: var(--accent-cyan);
 }
 
 
